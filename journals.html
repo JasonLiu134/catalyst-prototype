@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Top Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="headingimage">
+        <a href="index.html">
+            <img src="assets/Transparent Black.png" alt="Description of image" style="width: 60px; height: auto;"/>
+        </a>
+    </div>
+    <div class="headingspace"></div>
+    <div class="heading">
+        <button class="heading-button" onclick="window.location.href='about.html'">About</button>
+        <button class="heading-button" onclick="window.location.href='apply.html'">Apply</button>
+        <button class="heading-button" onclick="window.location.href='board.html'">Board</button>
+        <button class="heading-button current" onclick="window.location.href='journals.html'">Journals</button>
+    </div>
+
+    <h1 class="centeredtext"><b>Volume 1</b></h1>
+    <div class="centeredframe">
+        <iframe src="./journals/volume1.pdf#toolbar=0"
+        style="width: 600px; height: 800px;" frameborder="1"></iframe>
+    </div>
+
+    <div class="selectjournal">
+        <ul class="box-list">
+            <li><button class="boxbutton selectedjournal">Volume 1</button></li>
+            <li><button class="boxbutton">Volume 2</button></li>
+            <li><button class="boxbutton">Volume 3</button></li>
+        </ul>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
