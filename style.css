@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .heading {
   position: fixed;
   top: 0;
@@ -226,4 +232,209 @@ th {
 
 .largertext {
     font-size: 2em;
+}
+
+.journal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.journal-preview {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border: 2px solid #FFA500;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.journal-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.journal-title {
+    font-size: 1.5em;
+    margin-top: 15px;
+    color: #333;
+}
+
+.journal-thumbnail {
+    width: 80%;
+    height: 70%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.journal-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 90%;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: #cc0000;
+    transform: rotate(90deg);
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+.modal-body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+}
+
+.modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.selectjournal {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.box-list-journal {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    border: 2px solid rgb(16, 12, 4);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.boxbutton {
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid rgb(212, 144, 17);
+    background-color: white;
+    color: rgb(143, 96, 10);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.boxbutton:hover {
+    background-color: #f8cd55;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.selectedjournal {
+    background-color: #e5b138;
+    color: white;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .heading {
+        gap: 5vh;
+        padding-right: 2vh;
+    }
+    
+    .heading-button {
+        font-size: 1.5em;
+    }
+    
+    .journal-preview {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .box-list-journal {
+        flex-direction: column;
+        gap: 10px;
+    }
+
 }

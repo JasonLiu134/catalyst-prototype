@@ -27,3 +27,61 @@ window.addEventListener('scroll', () => {
     item.style.opacity = opacity;
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('fade-in');
+    const modal = document.getElementById('journalModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalIframe = document.getElementById('modalIframe');
+    const journalPreview = document.querySelector('.journal-preview');
+    const journalButtons = document.querySelectorAll('.boxbutton');
+    journalPreview.addEventListener('click', function() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    });
+    modalClose.addEventListener('click', function() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; 
+    });
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    journalButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const volume = this.getAttribute('data-volume');
+            journalButtons.forEach(btn => {
+                btn.classList.remove('selectedjournal');
+            });
+            this.classList.add('selectedjournal');
+            modalIframe.src = `./journals/volume${volume}.pdf#toolbar=0`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+
+    //TO DO: have to fix this
+    
+    // document.addEventListener('keydown', (e) => {
+    // const scrollStep = 100;
+    // if (e.key === "ArrowDown") {
+    //     modal.scrollBy({ top: scrollStep, behavior: "smooth" });
+    // } else if (e.key === "ArrowUp") {
+    //     modal.scrollBy({ top: -scrollStep, behavior: "smooth" });
+    // }
+    // });
+});
+
+const link = document.createElement('link');
+link.rel = 'icon';
+link.href = 'assets/favicon.png'; 
+document.head.appendChild(link);
