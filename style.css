@@ -439,3 +439,59 @@ th {
     }
 
 }
+
+.grid {
+    margin-top: 3em;
+    margin-left: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(4, 5em);
+    grid-template-rows: repeat(6, 5em); 
+    gap: 20em;
+  }
+
+.rectangle {
+    width: 15em;
+    height: 15em;
+    background-color: lightgray;
+    border: 2px solid black;
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+.extra {
+    top: -50%;
+    display: none;
+    position: relative;
+    z-index: 2;
+    overflow-wrap: break-word;
+    word-wrap: break-word; 
+    overflow: auto;  
+  }
+
+.rectangle:hover .extra {
+    display: block;
+}
+
+.profile {
+    width: 150px; 
+    height: auto;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.desc {
+    position: relative;
+    top: 100%;
+    right: -30%;
+    font-size: 24px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.desc2 {
+    position: relative;
+    top: 90%;
+    right: -28%;
+    font-size: 24px;
+    pointer-events: none;
+}
