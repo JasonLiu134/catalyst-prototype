@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Top Display</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Journal Tab</title>
+    <link rel="stylesheet" href="style.css" class="css">
 </head>
 <body>
     <div class="headingimage">
@@ -20,20 +20,45 @@
         <button class="heading-button current" onclick="window.location.href='journals.html'">Journals</button>
     </div>
 
-    <h1 class="centeredtext"><b>Volume 1</b></h1>
-    <div class="centeredframe">
-        <iframe src="./journals/volume1.pdf#toolbar=0"
-        style="width: 600px; height: 800px;" frameborder="1"></iframe>
+    <h1 class="centeredtext"><b>Journal Volumes</b></h1>
+    
+    <div class="journal-container">
+        <div class="journal-preview" data-volume="1">
+            <div class="journal-thumbnail">
+                <img src="./assets/volume1cover-1.png" alt="cover of volume 1">
+            </div>
+            <div class="journal-title">Volume 1</div>
+        </div>
+        <div class="journal-preview" data-volume="2">
+            <div class="journal-thumbnail">
+                <img src="./assets/volume2cover1-1.png" alt="cover of volume 2">
+            </div>
+            <div class="journal-title">Volume 2</div>
+        </div>
+        <!-- <div class="journal-preview" data-volume="3">
+            <div class="journal-thumbnail">
+                <img src="./assets/volume1cover-1.png" alt="cover of volume 3">
+            </div>
+            <div class="journal-title">Volume 3</div>
+        </div> -->
     </div>
 
     <div class="selectjournal">
-        <ul class="box-list">
-            <li><button class="boxbutton selectedjournal">Volume 1</button></li>
-            <li><button class="boxbutton">Volume 2</button></li>
-            <li><button class="boxbutton">Volume 3</button></li>
+        <ul class="box-list-journal">
+            <li><button class="boxbutton selectedjournal" data-volume="1">Volume 1</button></li>
+            <li><button class="boxbutton" data-volume="2">Volume 2</button></li>
+            <li><button class="boxbutton" data-volume="3">Volume 3</button></li>
         </ul>
     </div>
 
+    <div class="modal" id="journalModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose"></div>
+            <div class="modal-body">
+                <iframe id="modalIframe" class="modal-iframe" src="./journals/volume1.pdf#toolbar=0"></iframe>
+            </div>
+        </div>
+    </div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="script.js"></script>
 </body>
