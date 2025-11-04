@@ -33,11 +33,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('journalModal');
     const modalClose = document.getElementById('modalClose');
     const modalIframe = document.getElementById('modalIframe');
-    const journalPreview = document.querySelector('.journal-preview');
     const journalButtons = document.querySelectorAll('.boxbutton');
-    journalPreview.addEventListener('click', function() {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
+    const journalPreviews = document.querySelectorAll('.journal-preview');
+    journalPreviews.forEach(preview => {
+        preview.addEventListener('click', function() {
+            const volume = this.getAttribute('data-volume');
+            modalIframe.src = `./journals/volume${volume}.pdf#toolbar=0`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            journalButtons.forEach(btn => {
+                btn.classList.remove('selectedjournal');
+                if(btn.getAttribute('data-volume') === volume) {
+                    btn.classList.add('selectedjournal');
+                }
+            });
+        });
     });
     modalClose.addEventListener('click', function() {
         modal.classList.remove('active');
@@ -70,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     //TO DO: have to fix this
-    
+
     // document.addEventListener('keydown', (e) => {
     // const scrollStep = 100;
     // if (e.key === "ArrowDown") {
