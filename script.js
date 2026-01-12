@@ -11,23 +11,71 @@ window.addEventListener('load', function () {
   }
 });
 
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', () => {
   const items = document.querySelectorAll('.fade-item');
-  const viewportMiddleY = window.innerHeight / 2;
+  const windowHeight = window.innerHeight;
+  const currentScrollY = window.scrollY;
+  const fadeStart = windowHeight; 
+  const fadeFull = windowHeight * 0.5; 
 
   items.forEach(item => {
     const rect = item.getBoundingClientRect();
-    const elementMiddleY = rect.top + rect.height / 2;
-    const distanceFromCenter = Math.abs(elementMiddleY - viewportMiddleY);
-    const maxDistance = window.innerHeight / 2;
-
-    let opacity = 1 - (distanceFromCenter / maxDistance);
+    const itemTop = rect.top;
+    let opacity = (fadeStart - itemTop) / (fadeStart - fadeFull);
     opacity = Math.min(Math.max(opacity, 0), 1);
-
     item.style.opacity = opacity;
   });
+
+  lastScrollY = currentScrollY;
 });
 
+// let previousScroll = window.scrollY;
+// let scrollValue = 0;
+// let decreaseTimer = 0;
+// let canIncrement = true;
+// window.addEventListener('scroll', () => {
+//     decreaseTimer = 0;
+//     const scrolled = window.scrollY;
+//     if (scrolled > previousScroll) {
+//         scrollValue = scrollValue + scrolled - previousScroll;
+//     } else if(scrolled < previousScroll) {
+//         scrollValue = 0;
+//     }
+
+//     if (scrollValue >= 40){
+//         incrementPage();
+//     }
+
+//     previousScroll = scrolled;
+// });
+
+// setInterval(() => {
+//     decreaseTimer += 1;
+//     if (decreaseTimer > 100 & scrollValue > 0 & canIncrement) {
+//         scrollValue -= 1;
+//     }
+// }, 1);
+
+// function incrementPage() {
+//     if (canIncrement) {
+//         currentPage += 1;
+//         canIncrement = false;
+//         console.log(currentPage);
+//         setTimeout(() => {
+//             canIncrement = true;
+//         }, 500); 
+//     }
+// }
+
+    // window.scrollBy({
+    //     top: 200,
+    //     left: 0,
+    //     behavior: 'smooth'
+    // });
+
+// Journal Page
 document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('fade-in');
     const modal = document.getElementById('journalModal');
