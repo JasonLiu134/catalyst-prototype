@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals - The Catalyst</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-body">
+    <canvas id="particles"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-glow"></div>
+
+    <div class="headingimage">
+        <a href="index.html">
+            <img src="assets/favicon.png" alt="Catalyst Logo"/>
+        </a>
+    </div>
+    <div class="headingspace"></div>
+    <div class="heading">
+        <button class="heading-button" onclick="window.location.href='index.html'">About</button>
+        <button class="heading-button" onclick="window.location.href='apply.html'">Apply</button>
+        <button class="heading-button" onclick="window.location.href='board.html'">Board</button>
+        <button class="heading-button current" onclick="window.location.href='journals.html'">Journals</button>
+        <button class="heading-button" onclick="window.location.href='events.html'">Events</button>
+        <button class="heading-button" onclick="window.location.href='contact.html'">Contact</button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+    </div>
+
+    <h1 class="centeredtext"><b>Journal Volumes</b></h1>
+    
+    <div class="journal-container">
+        <div class="journal-preview" data-volume="1">
+            <div class="journal-thumbnail">
+                <img src="./assets/volume1cover-1.png" alt="cover of volume 1">
+            </div>
+            <div class="journal-title">Volume 1</div>
+        </div>
+        <div class="journal-preview" data-volume="2">
+            <div class="journal-thumbnail">
+                <img src="./assets/volume2cover1-1.png" alt="cover of volume 2">
+            </div>
+            <div class="journal-title">Volume 2</div>
+        </div>
+    </div>
+
+    <div class="selectjournal">
+        <ul class="box-list-journal">
+            <li><button class="boxbutton selectedjournal" data-volume="1">Volume 1</button></li>
+            <li><button class="boxbutton" data-volume="2">Volume 2</button></li>
+            <li><button class="boxbutton" data-volume="3">Volume 3</button></li>
+        </ul>
+    </div>
+
+    <div class="modal" id="journalModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose"></div>
+            <div class="modal-body">
+                <iframe id="modalIframe" class="modal-iframe" src="./journals/volume1.pdf#toolbar=0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="assets/favicon.png" alt="Catalyst Logo" class="footer-logo">
+                <p>The Catalyst is a digital paper series based at UC San Diego empowering undergraduate research voices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">About</a>
+                <a href="apply.html">Apply</a>
+                <a href="board.html">Board</a>
+                <a href="journals.html">Journals</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: placeholder@ucsd.edu</p>
+                <p>UC San Diego</p>
+                <p>La Jolla, CA 92093</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/thecatalystatucsd/?hl=en" target="_blank" rel="noopener">
+                        <img src="assets/instagramlogo.png" alt="Instagram">
+                    </a>
+                    <a href="https://discord.com/invite/qvvsUZnpH5" target="_blank" rel="noopener">
+                        <img src="assets/discordlogo.jpeg" alt="Discord">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Catalyst at UC San Diego. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

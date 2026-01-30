@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - The Catalyst</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-body">
+    <canvas id="particles"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-glow"></div>
+
+    <div class="headingimage">
+        <a href="index.html">
+            <img src="assets/favicon.png" alt="Catalyst Logo"/>
+        </a>
+    </div>
+    <div class="headingspace"></div>
+    <div class="heading">
+        <button class="heading-button" onclick="window.location.href='index.html'">About</button>
+        <button class="heading-button" onclick="window.location.href='apply.html'">Apply</button>
+        <button class="heading-button" onclick="window.location.href='board.html'">Board</button>
+        <button class="heading-button" onclick="window.location.href='journals.html'">Journals</button>
+        <button class="heading-button" onclick="window.location.href='events.html'">Events</button>
+        <button class="heading-button current" onclick="window.location.href='contact.html'">Contact</button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+    </div>
+
+    <div class="content">
+        <p class="maintext">Contact Us</p>
+    </div>
+
+    <div class="contact-content">
+        <div class="contact-form">
+            <h2 style="text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.5rem;">Get In Touch</h2>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What is this about?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h3>Other Ways to Reach Us</h3>
+            <p style="margin: 1rem 0;">Email: placeholder@ucsd.edu</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                <a href="https://www.instagram.com/thecatalystatucsd/?hl=en" target="_blank" rel="noopener">
+                    <img src="assets/instagramlogo.png" alt="Instagram" style="width: 60px; height: auto; border-radius: 10px;"/>
+                </a>
+                <a href="https://discord.com/invite/qvvsUZnpH5" target="_blank" rel="noopener">
+                    <img src="assets/discordlogo.jpeg" alt="Discord" style="width: 60px; height: auto; border-radius: 10px;"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <p class="endcontent"></p>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="assets/favicon.png" alt="Catalyst Logo" class="footer-logo">
+                <p>The Catalyst is a digital paper series based at UC San Diego empowering undergraduate research voices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">About</a>
+                <a href="apply.html">Apply</a>
+                <a href="board.html">Board</a>
+                <a href="journals.html">Journals</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: placeholder@ucsd.edu</p>
+                <p>UC San Diego</p>
+                <p>La Jolla, CA 92093</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/thecatalystatucsd/?hl=en" target="_blank" rel="noopener">
+                        <img src="assets/instagramlogo.png" alt="Instagram">
+                    </a>
+                    <a href="https://discord.com/invite/qvvsUZnpH5" target="_blank" rel="noopener">
+                        <img src="assets/discordlogo.jpeg" alt="Discord">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Catalyst at UC San Diego. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
