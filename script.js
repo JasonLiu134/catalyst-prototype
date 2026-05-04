@@ -1,28 +1,28 @@
-// Custom Cursor - Fixed lag
-const cursor = document.getElementById('cursor');
-const cursorGlow = document.getElementById('cursor-glow');
+// // Custom Cursor - Fixed lag
+// const cursor = document.getElementById('cursor');
+// const cursorGlow = document.getElementById('cursor-glow');
 
-let cursorX = 0;
-let cursorY = 0;
+// let cursorX = 0;
+// let cursorY = 0;
 
-document.addEventListener('mousemove', (e) => {
-    cursorX = e.clientX;
-    cursorY = e.clientY;
+// document.addEventListener('mousemove', (e) => {
+//     cursorX = e.clientX;
+//     cursorY = e.clientY;
     
-    // Direct update - no lag
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-    cursorGlow.style.left = cursorX + 'px';
-    cursorGlow.style.top = cursorY + 'px';
-});
+//     // Direct update - no lag
+//     cursor.style.left = cursorX + 'px';
+//     cursor.style.top = cursorY + 'px';
+//     cursorGlow.style.left = cursorX + 'px';
+//     cursorGlow.style.top = cursorY + 'px';
+// });
 
-document.addEventListener('mousedown', () => {
-    document.body.classList.add('clicking');
-});
+// document.addEventListener('mousedown', () => {
+//     document.body.classList.add('clicking');
+// });
 
-document.addEventListener('mouseup', () => {
-    document.body.classList.remove('clicking');
-});
+// document.addEventListener('mouseup', () => {
+//     document.body.classList.remove('clicking');
+// });
 
 // Click Ripple Animation
 document.addEventListener('click', (e) => {
