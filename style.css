@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 125%;
+}
+
 :root {
     --bg-primary: #fafafa;
     --bg-secondary: rgba(231, 170, 80, 0.08);
@@ -107,12 +111,12 @@ textarea:hover ~ #cursor {
 .headingimage {
     position: fixed;
     z-index: 15;
-    left: 20px;
-    top: 15px;
+    left: 25px;
+    top: 11px;
 }
 
 .headingimage img {
-    width: 55px;
+    width: 82px;
     height: auto;
     filter: drop-shadow(0 2px 8px var(--shadow-color));
     transition: transform 0.3s ease;
@@ -126,7 +130,7 @@ textarea:hover ~ #cursor {
     position: fixed;
     top: 0;
     left: 0;
-    height: 70px;
+    height: 105px;
     width: 100%;
     justify-content: flex-end;
     display: flex;
@@ -147,7 +151,7 @@ textarea:hover ~ #cursor {
     all: unset;
     display: inline-block;
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     padding: 0.5rem 0;
     cursor: pointer;
@@ -187,16 +191,18 @@ textarea:hover ~ #cursor {
 }
 
 .theme-toggle {
-    all: unset;
-    width: 40px;
-    height: 40px;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: var(--bg-secondary);
+    background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 1rem;
 }
@@ -209,12 +215,14 @@ textarea:hover ~ #cursor {
 
 .theme-toggle .sun {
     display: block;
-    font-size: 1.3em;
+    font-size: 2.1em;
+    pointer-events: none;
 }
 
 .theme-toggle .moon {
     display: none;
-    font-size: 1.3em;
+    font-size: 2.1em;
+    pointer-events: none;
 }
 
 [data-theme="dark"] .theme-toggle .sun {
@@ -226,7 +234,7 @@ textarea:hover ~ #cursor {
 }
 
 .headingspace {
-    height: 70px;
+    height: 105px;
 }
 
 /* Hero Section with Video */
@@ -258,12 +266,12 @@ textarea:hover ~ #cursor {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
 
 [data-theme="dark"] .hero-overlay {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
@@ -277,17 +285,17 @@ textarea:hover ~ #cursor {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
 }
 
-/* Hero Section */
+/* Page Header */
 .content {
     position: relative;
-    min-height: calc(100vh - 70px);
+    min-height: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     z-index: 2;
-    padding: 4rem 2rem;
+    padding: 3.5rem 2rem 1rem 2rem;
 }
 
 .fade-item {
@@ -406,7 +414,7 @@ textarea:hover ~ #cursor {
 
 .column-image img {
     width: 100%;
-    max-width: 450px;
+    max-width: 750px;
     height: auto;
     border-radius: 12px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -427,15 +435,18 @@ textarea:hover ~ #cursor {
 }
 
 .column-text h3 {
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 2.2rem;
+    font-weight: 600;
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
 }
 
 .column-text p {
     color: var(--text-secondary);
-    font-size: 1.05rem;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
 .column-text ul {
@@ -443,9 +454,9 @@ textarea:hover ~ #cursor {
 }
 
 .smallertext {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-top: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-top: 1.5rem;
     color: var(--text-tertiary);
 }
 
@@ -471,7 +482,7 @@ textarea:hover ~ #cursor {
 }
 
 .endcontent {
-    margin-top: 15rem;
+    margin-top: 3rem;
 }
 
 /* Apply Page */
@@ -498,10 +509,10 @@ textarea:hover ~ #cursor {
     align-items: center;
     text-align: center;
     flex: 1;
-    min-width: 300px;
-    max-width: 450px;
+    min-width: 400px;
+    max-width: 700px;
     background: var(--card-bg);
-    padding: 2.5rem;
+    padding: 3rem;
     border-radius: 16px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
@@ -515,7 +526,7 @@ textarea:hover ~ #cursor {
 }
 
 .applyheader {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -525,12 +536,12 @@ textarea:hover ~ #cursor {
 .applytext {
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
-    padding: 1.2rem;
+    padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 10px;
     font-weight: 400;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.7;
+    font-size: 1.15rem;
     border: 1px solid var(--border-color);
     flex-grow: 1;
 }
@@ -540,8 +551,8 @@ textarea:hover ~ #cursor {
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -602,22 +613,22 @@ textarea:hover ~ #cursor {
 }
 
 .desc {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
     color: var(--text-primary);
 }
 
 .desc2 {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: var(--accent-primary);
     margin-bottom: 1rem;
     font-weight: 500;
 }
 
 .extra {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    line-height: 1.6;
     color: var(--text-tertiary);
 }
 
@@ -645,8 +656,8 @@ textarea:hover ~ #cursor {
 }
 
 .journal-preview {
-    width: 300px;
-    height: 420px;
+    width: 600px;
+    height: 840px;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
@@ -667,8 +678,8 @@ textarea:hover ~ #cursor {
 }
 
 .journal-title {
-    font-size: 1.4rem;
-    margin-top: 1.5rem;
+    font-size: 2.4rem;
+    margin-top: 2rem;
     color: var(--text-primary);
     font-weight: 600;
 }
@@ -1164,7 +1175,7 @@ footer {
     background: var(--card-bg);
     border-top: 1px solid var(--border-color);
     padding: 3rem 2rem 2rem;
-    margin-top: 8rem;
+    margin-top: 3rem;
     position: relative;
     z-index: 10;
 }
@@ -1187,7 +1198,7 @@ footer {
 .footer-section p,
 .footer-section a {
     color: var(--text-tertiary);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     text-decoration: none;
     display: block;
@@ -1235,7 +1246,7 @@ footer {
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
     color: var(--text-tertiary);
-    font-size: 0.9rem;
+    font-size: 1.05rem;
 }
 
 /* Responsive */

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board - The Catalyst</title>
     <link rel="icon" href="assets/Favicon.png" type="image/png">
+    <script>
+        (function () {
+            var theme = localStorage.getItem('catalyst-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="main-body">
@@ -136,7 +142,7 @@
             </div>
             
             <div class="board-member">
-                <img src="assets/giesel.jpg">
+                <img src="assets/headshots/prakhar_shah.jpg">
                 <p class="desc">Prakhar Shah</p>
                 <p class="desc2">Webmaster</p>
                 <!-- <p class="extra">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
@@ -212,6 +218,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>
