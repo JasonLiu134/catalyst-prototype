@@ -47,6 +47,8 @@ document.addEventListener('click', (e) => {
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
+console.log(themeToggle);
+
 // Load saved theme or default to light
 const savedTheme = localStorage.getItem('catalyst-theme');
 console.log('Initial theme:', savedTheme); // Debug
@@ -441,9 +443,9 @@ applyButtons.forEach(button => {
     button.addEventListener('click', () => {
         // TODO: Replace these URLs with your actual Google Form/Doc links
         if (button.textContent.includes('Author/Editor')) {
-            window.open('YOUR_AUTHOR_EDITOR_GOOGLE_DOC_URL_HERE', '_blank');
+            window.open('https://forms.gle/Hrh241TvbFiU9d8SA', '_blank');
         } else if (button.textContent.includes('Board')) {
-            window.open('YOUR_BOARD_GOOGLE_DOC_URL_HERE', '_blank');
+            window.open('https://forms.gle/Za9dsnUvA1pDMcYE9', '_blank');
         }
     });
 });
